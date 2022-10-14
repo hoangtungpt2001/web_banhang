@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
 	<div class="main">
 
 		<!-- Sign up form -->
@@ -78,8 +78,33 @@
 	<!-- JS -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="alert/dist/sweetalert.css">
 
-
+<script type="text/javascript">
+var status = document.getElementById("status").value;
+if(status == "success"){
+swal("Chuc Mung","DANG KI THANH CONG","success");
+}
+if(status == "nhapten"){
+	swal("xin loi","vui long nhap ho ten","error");
+	}
+if(status == "nhapemail"){
+	swal(" xin loi","vui long nhap email","error");
+	}
+if(status == "nhapmatkhau"){
+	swal("xin loi","vui long nhap mat khau","error");
+	}
+if(status == "nhaplaimatkhau"){
+	swal("xin loi","vui long nhap lai mat khau","error");
+	}
+if(status == "nhapsodienthoai"){
+	swal("xin loi","vui long nhap so dien thoai","error");
+	}
+if(status == "nhapsodienthoaidaydu"){
+	swal("xin loi","vui long nhap so dien thoai du 10 so","error");
+	}
+</script>
 
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->
