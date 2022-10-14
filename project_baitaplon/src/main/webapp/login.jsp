@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
 	<div class="main">
 
 		<!-- Sing in  Form -->
@@ -31,7 +31,7 @@
 
 					<div class="signin-form">
 						<h2 class="form-title">Sign in</h2>
-						<form method="" action="" class="register-form"
+						<form method="post" action="login" class="register-form"
 							id="login-form">
 							<div class="form-group">
 								<label for="username"><i
@@ -76,6 +76,21 @@
 	<!-- JS -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="alert/dist/sweetalert.css">
+
+<script type="text/javascript">
+var status = document.getElementById("status").value;
+if(status == "failed"){
+swal("xin loi","tai khoan hoac mat khau khong dung!!","error");
+}
+if(status == "invalidEmail"){
+	swal("xin loi","ban can nhap tai khoan!!","error");
+	}
+if(status == "invalidUpwd"){
+	swal("xin loi","ban can nhap mat khau!!","error");
+	}
+</script>
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
